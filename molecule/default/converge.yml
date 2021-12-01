@@ -15,3 +15,5 @@
   tasks:
     - name: Verify that Go is installed and available in the $PATH.
       command: go version
+      environment:
+        PATH: /usr/local/go/bin:{{ ansible_env.PATH }}
