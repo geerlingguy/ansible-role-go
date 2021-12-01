@@ -17,3 +17,4 @@
       command: go version
       environment:
         PATH: /usr/local/go/bin:{{ ansible_env.PATH }}
+      changed_when: false
