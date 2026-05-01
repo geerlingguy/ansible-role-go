@@ -27,6 +27,10 @@ These two variables are used to build the download URL when installing Go.
 
 SHA256 checksum of the Go download. If changing the version, platform, or architecture, you will also need to update this checksum, too.
 
+    go_download_dest: /usr/local/src
+
+Directory where the Go tarball will be downloaded.
+
 ## Dependencies
 
 None.

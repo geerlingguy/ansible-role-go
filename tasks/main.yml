@@ -16,14 +16,14 @@
 - name: Download Go.
   get_url:
     url: "{{ go_download_url }}"
-    dest: /usr/local/src/{{ go_tarball }}
+    dest: "{{ go_download_dest }}/{{ go_tarball }}"
     checksum: "sha256:{{ go_checksum }}"
   when: go_version_result is failed
         or go_version not in go_version_result.stdout
 
 - name: Extract Go.
   unarchive:
-    src: /usr/local/src/{{ go_tarball }}
+    src: "{{ go_download_dest }}/{{ go_tarball }}"
     dest: /usr/local
     copy: no
   when: go_version_result is failed
